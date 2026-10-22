@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timezone
 from typing import Any
 
@@ -10,7 +11,9 @@ version="1.0.0",
 description="Cloud backend for the Smart City NOC simulation",
 )
 
-API_TOKEN = "change-this-test-token-before-deployment"
+
+
+API_TOKEN = os.environ.get("API_TOKEN", "")
 
 zones = {
 f"zone_{i}": {
